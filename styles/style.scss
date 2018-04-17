@@ -1,0 +1,157 @@
+$primaryColor: #f4f4f4;
+$secondaryColor: #f8f8f8;
+$accentColor: #666666;
+$accentColorLight: #ffffff;
+
+body {
+    margin: 0;
+    min-width: 750px;
+}
+
+#main {
+    width: 100%;
+    height: 100vh;
+
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+
+    -webkit-flex-flow: column nowrap;
+    -moz-flex-flow: column nowrap;
+    -ms-flex-flow: column nowrap;
+    -o-flex-flow: column nowrap;
+    flex-flow: column nowrap;
+
+    #ribbon {
+        flex-grow: 0;
+        flex-shrink: 0;
+
+        height: 100px;
+
+        background-color: $primaryColor;
+
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+
+        & > div {
+            background-color: $secondaryColor;
+            margin: 15px;
+            margin-right: 0;
+            height: 70px;
+            line-height: 0;
+            padding-right: 6px;
+
+            & > div {
+                display: inline-block;
+                margin: 6px 0 0 6px;
+                height: 26px;
+                width: 26px;
+                background-color: $accentColorLight;
+                box-shadow: 0 0 0 1px $accentColorLight;
+
+                cursor: pointer;
+            }
+
+            .active {
+                box-shadow: 0 0 0 1px $accentColorLight, 0 0 0 2px $accentColor;
+            }
+        }
+
+        #toolbox {
+
+            .tool {
+                -webkit-background-size: contain;
+                background-size: contain;
+            }
+
+            #marker {
+                background-image: url("../../images/marker.png");
+            }
+
+            #eraser {
+                background-image: url("../../images/eraser.png");
+            }
+
+            #save {
+                background-image: url("../../images/save.png");
+                background-color: transparent;
+            }
+        }
+
+        #palette {
+            .color-button.active {}
+        }
+
+        #colorpicker-wrapper {
+            text-align: center;
+            padding: 0;
+            line-height: initial;
+
+            #colorpicker {
+                line-height: initial;
+                text-align: center;
+                padding: 0;
+
+                display: block;
+                height: 40px;
+                width: 40px;
+                margin: 6px;
+                margin-bottom: 1px;
+            }
+
+            span {
+                font-family: "Roboto";
+                font-size: 0.8em;
+                cursor: default;
+            }
+        }
+
+        #width-selector {
+            padding: 0;
+
+            & > div > div{
+                background-color: #404;
+                width: 10px;
+                height: 75%;
+                margin: 12.5% auto;
+            }
+
+            .small > div {
+                width: 2px;
+            }
+
+            .medium > div {
+                width: 7px;
+            }
+
+            .large > div {
+                width: 10px;
+            }
+
+            .huge > div {
+                width: 12px;
+            }
+
+            input {
+                margin: 10px 6px 0;
+                width: 136px;
+
+                cursor: pointer;
+            }
+        }
+    }
+
+    #canvas-div {
+        flex-grow: 1;
+        flex-shrink: 1;
+
+        canvas {
+            margin: 0;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Paint4Web - untitled</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="styles/colorpicker.css">
+    <link rel="stylesheet" type="text/css" href="styles/css/style.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+</head>
+<body>
+
+<div id="main">
+    <div id="ribbon">
+        <div id="toolbox">
+            <div class="tool active" id="marker"></div>
+            <div class="tool" id="eraser"></div><br />
+            <div class="tool" id="save"></div>
+            <div class="tool" id="print"></div>
+        </div>
+        <div id="palette"></div>
+        <div id="colorpicker-wrapper">
+            <div id="colorpicker"></div>
+            <span>Edit</span>
+        </div>
+        <div id="width-selector">
+            <div class="width small active"><div></div></div>
+            <div class="width medium"><div></div></div>
+            <div class="width large"><div></div></div>
+            <div class="width huge"><div></div></div>
+            <br />
+            <input type="range" min="1" max="100" value="3">
+        </div>
+    </div>
+    <div id="canvas-div">
+        <canvas id="canvas"></canvas>
+    </div>
+</div>
+
+<script type="text/javascript" src="includes/colorpicker/jquery.js"></script>
+<script type="text/javascript" src="includes/colorpicker/colorpicker.js"></script>
+<script type="text/javascript" src="includes/colorpicker/eye.js"></script>
+<script type="text/javascript" src="includes/colorpicker/utils.js"></script>
+<script type="text/javascript" src="includes/FileSaver.js"></script>
+<script type="text/javascript" src="includes/init.js"></script>
+<script type="text/javascript" src="includes/script.js"></script>
+</body>
+</html>

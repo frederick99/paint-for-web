@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  min-width: 750px;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  -o-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+
+#main #ribbon {
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: 100px;
+  background-color: #f4f4f4;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+
+#main #ribbon > div {
+  background-color: #f8f8f8;
+  margin: 15px;
+  margin-right: 0;
+  height: 70px;
+  line-height: 0;
+  padding-right: 6px;
+}
+
+#main #ribbon > div > div {
+  display: inline-block;
+  margin: 6px 0 0 6px;
+  height: 26px;
+  width: 26px;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px #ffffff;
+  cursor: pointer;
+}
+
+#main #ribbon > div .active {
+  box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px #666666;
+}
+
+#main #ribbon #toolbox .tool {
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+#main #ribbon #toolbox #marker {
+  background-image: url("../../images/marker.png");
+}
+
+#main #ribbon #toolbox #eraser {
+  background-image: url("../../images/eraser.png");
+}
+
+#main #ribbon #toolbox #save {
+  background-image: url("../../images/save.png");
+  background-color: transparent;
+}
+
+#main #ribbon #colorpicker-wrapper {
+  text-align: center;
+  padding: 0;
+  line-height: initial;
+}
+
+#main #ribbon #colorpicker-wrapper #colorpicker {
+  line-height: initial;
+  text-align: center;
+  padding: 0;
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin: 6px;
+  margin-bottom: 1px;
+}
+
+#main #ribbon #colorpicker-wrapper span {
+  font-family: "Roboto";
+  font-size: 0.8em;
+  cursor: default;
+}
+
+#main #ribbon #width-selector {
+  padding: 0;
+}
+
+#main #ribbon #width-selector > div > div {
+  background-color: #404;
+  width: 10px;
+  height: 75%;
+  margin: 12.5% auto;
+}
+
+#main #ribbon #width-selector .small > div {
+  width: 2px;
+}
+
+#main #ribbon #width-selector .medium > div {
+  width: 7px;
+}
+
+#main #ribbon #width-selector .large > div {
+  width: 10px;
+}
+
+#main #ribbon #width-selector .huge > div {
+  width: 12px;
+}
+
+#main #ribbon #width-selector input {
+  margin: 10px 6px 0;
+  width: 136px;
+  cursor: pointer;
+}
+
+#main #canvas-div {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+#main #canvas-div canvas {
+  margin: 0;
+}
