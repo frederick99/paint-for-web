@@ -40,41 +40,6 @@ canvas.addEventListener('mouseout', function(e) {
 }, false);
 
 
-canvas.addEventListener('touchstart', function(e) {
-    drawing = true;
-
-    var mouseX = e.x - this.offsetLeft + window.pageXOffset;
-    var mouseY = e.y - this.offsetTop + window.pageYOffset;
-
-    startDrawing(mouseX, mouseY, ctx);
-}, false);
-
-canvas.addEventListener('touchmove', function (e) {
-    if (drawing) {
-        var mouseX = e.x - this.offsetLeft + window.pageXOffset;
-        var mouseY = e.y - this.offsetTop + window.pageYOffset;
-        drawTo(mouseX, mouseY, ctx);
-    }
-}, false);
-
-canvas.addEventListener('touchend', function(e) {
-    var mouseX = e.x - this.offsetLeft + window.pageXOffset;
-    var mouseY = e.y - this.offsetTop + window.pageYOffset;
-    stopDrawing(mouseX, mouseY, ctx)
-}, false);
-
-canvas.addEventListener('touchleave', function(e) {
-    var mouseX = e.x - this.offsetLeft + window.pageXOffset;
-    var mouseY = e.y - this.offsetTop + window.pageYOffset;
-    stopDrawing(mouseX, mouseY, ctx);
-}, false);
-
-canvas.addEventListener('touchcancel', function(e) {
-    var mouseX = e.x - this.offsetLeft + window.pageXOffset;
-    var mouseY = e.y - this.offsetTop + window.pageYOffset;
-    stopDrawing(mouseX, mouseY, ctx);
-}, false);
-
 
 
 function startDrawing(x, y, c) {

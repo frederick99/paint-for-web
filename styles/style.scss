@@ -70,15 +70,15 @@ body {
             }
 
             #marker {
-                background-image: url("../../images/marker.png");
+                background-image: url("../../icons/marker.png");
             }
 
             #eraser {
-                background-image: url("../../images/eraser.png");
+                background-image: url("../../icons/eraser.png");
             }
 
             #save {
-                background-image: url("../../images/save.png");
+                background-image: url("../../icons/save.png");
                 background-color: transparent;
             }
         }
@@ -144,7 +144,70 @@ body {
                 cursor: pointer;
             }
         }
+
+        #settings {
+            #theme {
+                -webkit-background-size: contain;
+                background-size: contain;
+                
+                background-image: url("../../icons/moon.png");
+            }
+        }
     }
+
+    #ribbon.dark {
+        $primaryColor: #212121;
+        $secondaryColor: #323232;
+        $accentColor: #aaaaaa;
+        $accentColorLight: #444;
+
+        background-color: $primaryColor;
+
+        & > div {
+            background-color: $secondaryColor;
+
+            & > div {
+                box-shadow: 0 0 0 1px $accentColorLight;
+            }
+
+            .active {
+                box-shadow: 0 0 0 1px $accentColorLight, 0 0 0 2px $accentColor;
+            }
+        }
+
+        #toolbox {
+            & > div {
+                background-color: $accentColorLight;
+            }
+        }
+
+        #colorpicker-wrapper {
+            span {
+                color: white;
+            }
+        }
+
+        #width-selector {
+            & > div {
+                background-color: $accentColorLight;
+            }
+
+            & > div > div{
+                background-color: #ccf;
+            }
+        }
+
+        #settings {
+            & > div {
+                background-color: $accentColorLight;
+            }
+
+            #theme {
+                background-image: url("../../icons/sun.png");
+            }
+        }
+    }
+
 
     #canvas-div {
         flex-grow: 1;

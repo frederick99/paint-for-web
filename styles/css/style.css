@@ -59,15 +59,15 @@ body {
 }
 
 #main #ribbon #toolbox #marker {
-  background-image: url("../../images/marker.png");
+  background-image: url("../../icons/marker.png");
 }
 
 #main #ribbon #toolbox #eraser {
-  background-image: url("../../images/eraser.png");
+  background-image: url("../../icons/eraser.png");
 }
 
 #main #ribbon #toolbox #save {
-  background-image: url("../../images/save.png");
+  background-image: url("../../icons/save.png");
   background-color: transparent;
 }
 
@@ -125,6 +125,52 @@ body {
   margin: 10px 6px 0;
   width: 136px;
   cursor: pointer;
+}
+
+#main #ribbon #settings #theme {
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-image: url("../../icons/moon.png");
+}
+
+#main #ribbon.dark {
+  background-color: #212121;
+}
+
+#main #ribbon.dark > div {
+  background-color: #323232;
+}
+
+#main #ribbon.dark > div > div {
+  box-shadow: 0 0 0 1px #444;
+}
+
+#main #ribbon.dark > div .active {
+  box-shadow: 0 0 0 1px #444, 0 0 0 2px #aaaaaa;
+}
+
+#main #ribbon.dark #toolbox > div {
+  background-color: #444;
+}
+
+#main #ribbon.dark #colorpicker-wrapper span {
+  color: white;
+}
+
+#main #ribbon.dark #width-selector > div {
+  background-color: #444;
+}
+
+#main #ribbon.dark #width-selector > div > div {
+  background-color: #ccf;
+}
+
+#main #ribbon.dark #settings > div {
+  background-color: #444;
+}
+
+#main #ribbon.dark #settings #theme {
+  background-image: url("../../icons/sun.png");
 }
 
 #main #canvas-div {

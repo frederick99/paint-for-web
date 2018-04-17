@@ -17,7 +17,7 @@
             <div class="tool active" id="marker"></div>
             <div class="tool" id="eraser"></div><br />
             <div class="tool" id="save"></div>
-            <div class="tool" id="print"></div>
+            <!-- <div class="tool" id="print"></div> -->
         </div>
         <div id="palette"></div>
         <div id="colorpicker-wrapper">
@@ -32,9 +32,12 @@
             <br />
             <input type="range" min="1" max="100" value="3">
         </div>
+        <div id="settings">
+            <div id="theme"></div>
+        </div>
     </div>
     <div id="canvas-div">
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas" oncontextmenu="return false"></canvas>
     </div>
 </div>
 

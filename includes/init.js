@@ -8,22 +8,25 @@ var slider = document.querySelector("#main #ribbon #width-selector input");
 var widthButtons = document.getElementsByClassName("width");
 
 var colors = [
-"#000000", "#808080", "#890012", "#f5141c", "#ff7a28",
-"#f9f500", "#1bbc3b", "#00a5ed", "#3f46d5", "#b03fa9",
-"#ffffff", "#c3c3c3", "#b38055", "#feaec7", "#ffc815",
-"#f0e3ae", "#b1e90c", "#91dee8", "#7192bb", "#c7bee9",
+    "#000000", "#808080", "#890012", "#f5141c", "#ff7a28",
+    "#f9f500", "#1bbc3b", "#00a5ed", "#3f46d5", "#b03fa9",
+    "#ffffff", "#c3c3c3", "#b38055", "#feaec7", "#ffc815",
+    "#f0e3ae", "#b1e90c", "#91dee8", "#7192bb", "#c7bee9",
 ];
+
 var markerWidth = 3;
 var eraserWidth = 30;
 var markerColor;
+var bgColor = "#ffffff";
 
 var hexMap = ["A", "B", "C", "D", "E", "F"];
 var filename = "mydrawing";
 var activeColor; // used to deactivate color buttons
 var activeTool;
 var activeWidth;
+var darkTheme = false;
 
-var DEBUG = false;
+var DEBUG = true;
 
 function decToHex(digit) {
     if (digit > 15) return "";
@@ -49,7 +52,7 @@ function log(msg) {
 window.onload = function () {
     canvas.width = document.documentElement.clientWidth;
     canvas.height = document.documentElement.clientHeight - 100 - 4;
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = bgColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     var temp = "", i = 0;
@@ -111,7 +114,7 @@ eraser.onclick = function () {
         activeTool.classList.add("active");
 
         markerColor = strokeStyle
-        strokeStyle = "#ffffff";
+        strokeStyle = bgColor;
         setStrokeWidth(eraserWidth);
     }
 }
@@ -143,19 +146,22 @@ widthButtons[3].onclick = function () {
 }
 }
 
+var maxW = canvas.width, maxH = canvas.height;
 window.onresize = function() {
     var _canvas = document.createElement("canvas");
     var _ctx = _canvas.getContext('2d');
-    var w= Math.max(document.documentElement.clientWidth, 750);
+    var w = Math.max(document.documentElement.clientWidth, 750);
     var h = Math.max(document.documentElement.clientHeight - 100 - 4, 200);
+    // var maxW = Math.max(maxW, w);
+    // var maxH = Math.max(maxH, h);
     _canvas.width = w;
-    _canvas.height = h;
-    _ctx.fillStyle = "#ffffff";
+    _canvas.height= h;
+    _ctx.fillStyle = bgColor;
     _ctx.fillRect(0, 0, w, h);
-    _ctx.drawImage(canvas, 0, 0);
+    _ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height);
     canvas.width = w;
     canvas.height = h;
-    ctx.drawImage(_canvas, 0, 0);
+    ctx.drawImage(_canvas, 0, 0, w, h);
 }
 
 $('#colorpicker').ColorPicker({
@@ -190,8 +196,23 @@ save.addEventListener('click', function (e) {
     }
 }, false);
 
+var nightToggle = document.getElementById("theme");
+var ribbon = document.getElementById("ribbon");
+nightToggle.addEventListener('click', function () {
+    log('toggle night mode');
 
+    if(darkTheme){
+        ribbon.classList.remove("dark");
+        this.classList.remove("active");
+        darkTheme = false;
+    }else{
+        ribbon.classList.add("dark");
+        //this.classList.add("active");
+        darkTheme = true;
+    }
+}, false);
 
+/*
 var printButton = document.getElementById("print");
 printButton.onclick = function () {
     log('opening print dialog');
@@ -202,9 +223,8 @@ printButton.onclick = function () {
     setTimeout(function(){}, 1000);
     popup.print();
     popup.close();
-}
-
-
+};
+*/
 
 function setColorPickerColor(color) {
     $('#colorpicker').ColorPickerSetColor(color);
@@ -247,4 +267,8 @@ function deactivate(element) {
 function activate(element) {
     activeWidth = element;
     element.classList.add("active");
+}
+
+function setTheme(theme) {
+    $('#ribbon').css('background-color', theme.primaryColor);
 }
