@@ -268,7 +268,3 @@ function activate(element) {
     activeWidth = element;
     element.classList.add("active");
 }
-
-function setTheme(theme) {
-    $('#ribbon').css('background-color', theme.primaryColor);
-}
