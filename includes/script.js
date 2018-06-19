@@ -67,7 +67,8 @@ function stopDrawing(x, y, c) {
 
     if (drawing) {
         drawing = false;
-        ctx.closePath();
+        drawTo(x, y, c);
+        //c.closePath();
         drawDot(x, y, c);
     }
 }
