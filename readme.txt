@@ -26,9 +26,3 @@ How to run:
     Go to https://frederick99orig.github.io/paint-for-web/
 
 ===========================================================
-
-Authors:
-
-    Naveen Tiwari, B.Tech. CSE IInd Year
-    Jitendra Singh, B.Tech. CSE IInd Year
-    Pratiush Kumar, B.Tech. CSE IInd Year
