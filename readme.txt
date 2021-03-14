@@ -23,6 +23,6 @@ Installation steps:
 
 How to run:
 
-    Go to https://frederick99orig.github.io/paint-for-web/
+    Go to https://frederick99.github.io/paint-for-web/
 
 ===========================================================
